@@ -2,16 +2,35 @@
 <project name="CppTools plugin deploy" default="copy_files">
   <property name="idea.sandbox.home.path" value="${IDEA_SANDBOX_HOME_PATH}"/>
   <property name="project.path" value="${basedir}" />
+  <property name="reports.dir" value="${project.path}/reports" />
+  <property name="tests.dir" value="${project.path}/testSrc/tests" />
+
+  <target name="unit tests">
+      <mkdir dir="${reports.dir}" />
+
+      <junit printsummary="yes" haltonfailure="no">
+          <classpath>
+              <!--<pathelement location="${project.pa" />-->
+          </classpath>
+
+          <batchtest fork="yes" todir="${reports.dir}">
+              <fileset dir="${tests.dir}">
+                  <include name="*Test.java" />
+                  <exclude name="*TestCase.java" />
+              </fileset>
+          </batchtest>
+      </junit>
+  </target>
 
   <target name="copy_files">
     <mkdir dir="${idea.sandbox.home.path}/plugins/CppTools/lib" />
 
     <copy todir="${idea.sandbox.home.path}/plugins/CppTools/lib" >
-       <fileset dir="${project.path}/.." includes="lib.tcl,profile.tcl,defs.h,cfserver.exe,cfserver.mac,cfserver.linux,cfserver.*.syms"/>
+       <fileset dir="${project.path}/cfserver-bin" includes="lib.tcl,profile.tcl,defs.h,cfserver.exe,cfserver.mac,cfserver.linux,cfserver.*.syms"/>
     </copy>
 
     <copy todir="${idea.sandbox.home.path}/plugins/CppTools" >
-       <fileset dir="${project.path}/../DOC" includes="readme.*"/>
+       <fileset dir="${project.path}/docs" includes="readme.*"/>
     </copy>
 
     <mkdir dir="${idea.sandbox.home.path}/plugins/CppTools/META-INF" />

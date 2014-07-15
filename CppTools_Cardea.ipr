@@ -67,10 +67,8 @@
       </profile>
     </annotationProcessing>
   </component>
-  <component name="CopyrightManager" default="">
-    <module2copyright />
-  </component>
-  <component name="CppTools.Loader" reportImplicitCastToBool="false" reportNameReferencedOnce="false" warnedAboutFileOutOfSourceRoot="true" version="3" currentProject="$PROJECT_DIR$/testData/project_files/A.dsp" compilerSelect="AUTO">
+  <component name="CopyrightManager" default="" />
+  <component name="CppTools.Loader" reportImplicitCastToBool="false" reportNameReferencedOnce="false" warnedAboutFileOutOfSourceRoot="true" version="3" currentProject="$PROJECT_DIR$/testData/project_files/A.dsp" sdkErrorReported="true" compilerSelect="AUTO">
     <ignored-file path="C:\MinGW\1.0\home\Maxim\CF-C\idea\testData\completion\A.cpp" />
   </component>
   <component name="DependenciesAnalyzeManager">
